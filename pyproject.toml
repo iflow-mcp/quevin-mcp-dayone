@@ -1,6 +1,6 @@
 [project]
 name = "iflow-mcp_quevin-mcp-dayone"
-version = "2.0.0"
+version = "2.0.1"
 description = "MCP server for Day One Journal integration with Claude Desktop"
 authors = [
     {name = "Kevin Davison", email = "kevin.davison@quevin.com"}
@@ -20,9 +20,6 @@ dev = [
     "black>=24.0.0",
     "mypy>=1.0.0"
 ]
-
-[project.scripts]
-dayone-server = "mcp_dayone.server:main"
 
 [build-system]
 requires = ["setuptools>=61.0", "wheel"]
