@@ -26,10 +26,6 @@ class DayOneTools:
     
     def _verify_cli(self) -> None:
         """Verify Day One CLI is available."""
-        # Check if running in test environment
-        if os.environ.get('IFLOW_TEST_MODE') == 'true':
-            # Skip CLI verification in test mode
-            return
         try:
             result = subprocess.run(
                 [self.cli_path, "--version"],
@@ -45,10 +41,6 @@ class DayOneTools:
     
     def _get_db_path(self) -> Path:
         """Get the path to Day One database."""
-        # Check if running in test environment
-        test_db_path = os.environ.get('IFLOW_TEST_DB_PATH')
-        if test_db_path:
-            return Path(test_db_path)
         db_path = Path.home() / "Library/Group Containers/5U8NS4GX82.dayoneapp2/Data/Documents/DayOne.sqlite"
         return db_path
     

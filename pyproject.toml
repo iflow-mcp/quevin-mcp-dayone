@@ -1,5 +1,5 @@
 [project]
-name = "mcp-dayone"
+name = "iflow-mcp_quevin-mcp-dayone"
 version = "2.0.0"
 description = "MCP server for Day One Journal integration with Claude Desktop"
 authors = [
@@ -25,8 +25,14 @@ dev = [
 dayone-server = "mcp_dayone.server:main"
 
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [tool.uv]
 dev-dependencies = [
